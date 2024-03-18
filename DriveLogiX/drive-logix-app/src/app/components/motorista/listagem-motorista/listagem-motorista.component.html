@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Motoristas</h2>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="nomeMotorista">
+      <th mat-header-cell *matHeaderCellDef>Nome Motorista</th>
+      <td mat-cell *matCellDef="let element">{{ element.nomeMotorista }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="numCNH">
+      <th mat-header-cell *matHeaderCellDef>Número CNH</th>
+      <td mat-cell *matCellDef="let element">{{ element.numCNH }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="categoriaCNH">
+      <th mat-header-cell *matHeaderCellDef>Categoria CNH</th>
+      <td mat-cell *matCellDef="let element">{{ element.categoriaCNH }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="setor">
+      <th mat-header-cell *matHeaderCellDef>Setor</th>
+      <td mat-cell *matCellDef="let element">{{ element.setor }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="gerente">
+      <th mat-header-cell *matHeaderCellDef>Gerente</th>
+      <td mat-cell *matCellDef="let element">{{ element.gerente }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Editar</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="editMotorista(element.idMotorista)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

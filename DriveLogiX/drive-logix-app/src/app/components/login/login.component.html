@@ -1,0 +1,25 @@
+<div class="centered-content">
+    <mat-card class="card">
+        <mat-card-title class="title">Acesse sua Conta</mat-card-title>
+        <form (ngSubmit)="fazerLogin()">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="E-mail" type="email" id="userName" name="email" [(ngModel)]="email"
+                    required>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" name="senha" [(ngModel)]="senha" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <div class="buttons">
+                <button mat-raised-button color="primary">Entrar</button>
+                <button mat-raised-button color="primary" routerLink="/home">Cancelar</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

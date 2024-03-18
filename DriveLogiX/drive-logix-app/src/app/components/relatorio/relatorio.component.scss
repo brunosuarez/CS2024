@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.card {
+    padding: 10px;
+}
+
+.title {
+    @include default-position-mat-title;
+}
+
+form{
+    @include default-position-form;
+}
+
+.buttons {
+    @include default-buttons-form;
+}

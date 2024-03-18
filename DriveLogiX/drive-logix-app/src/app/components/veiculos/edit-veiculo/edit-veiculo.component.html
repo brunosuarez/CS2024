@@ -1,0 +1,34 @@
+<mat-card class="card">
+    <mat-card-title class="title">Editar Veiculo</mat-card-title>
+    <form #editForm="ngForm">
+        <mat-form-field class="full-width" required>
+            <input matInput placeholder="Marca do Veículo" type="text" [(ngModel)]="veiculo.marcaVeiculo" name="marcaVeiculo" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Placa" type="text" [(ngModel)]="veiculo.placaVeiculo" name="placaVeiculo">
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Modelo do Veículo" type="text" [(ngModel)]="veiculo.modeloVeiculo" name="modeloVeiculo" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Ano do Veículo" type="number" [(ngModel)]="veiculo.anoVeiculo" name="anoVeiculo" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Quilometragem do Veículo" type="number" [(ngModel)]="veiculo.quilometragemVeiculo" name="quilometragemVeiculo" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Status do Veículo</mat-label>
+            <mat-select [(ngModel)]="veiculo.statusVeiculo" name="statusVeiculo" required>
+              <mat-option value="Disponivel">Disponível</mat-option>
+              <mat-option value="Em Manutencao">Em Manutenção</mat-option>
+              <mat-option value="Fora de servico">Fora de Serviço</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </form>
+
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="updateVeiculo()">Atualizar</button>
+        <button mat-raised-button color="primary" (click)="cancelEdit()">Cancelar</button>
+    </div>
+</mat-card>
+

@@ -1,0 +1,36 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #3F51B5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-img {
+    max-height: 50px;
+}
+
+.options-header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.options-header a {
+    color: #fff;
+    display: flex; 
+    align-items: center; 
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.options-header i {
+    margin-left: 5px;
+}
+
+.main-content {
+    padding-top: 64px;
+}

@@ -1,0 +1,90 @@
+<mat-card class="card">
+  <mat-card-title class="title">Relatório</mat-card-title>
+  <form>
+    <mat-form-field>
+      <mat-label>Data Inicial</mat-label>
+      <mat-date-range-input [rangePicker]="campaignOnePicker">
+        <input matStartDate [matDatepicker]="startPicker"
+          (dateInput)="startDateSelected($event)">
+        <input matEndDate [matDatepicker]="endPicker" (dateInput)="endDateSelected($event)">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+      <mat-datepicker #startPicker></mat-datepicker>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Data Final</mat-label>
+      <mat-date-range-input [rangePicker]="campaignTwoPicker">
+        <input matStartDate [matDatepicker]="startPicker2"
+          (dateInput)="startTwoDateSelected($event)">
+        <input matEndDate [matDatepicker]="endPicker2" (dateInput)="endTwoDateSelected($event)">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+      <mat-datepicker #startPicker2></mat-datepicker>
+      <mat-datepicker #endPicker2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput placeholder="ID do Veículo" type="number" [(ngModel)]="idVeiculo" name="idVeiculo">
+    </mat-form-field>
+
+    <div class="buttons">
+      <button mat-raised-button color="primary" (click)="gerarRelatorio()">Gerar Relatório</button>
+    </div>
+  </form>
+  
+  <div *ngIf="relatorio" class="relatorio">
+    <h2>Relatório</h2>
+    
+    <h3>Reservas</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Data/Hora da Reserva</th>
+          <th>ID da Reserva</th>
+          <th>Nome do Motorista</th>
+          <th>Solicitante da Reserva</th>
+          <th>Rota</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of relatorio.reservas">
+          <td>{{ reserva.dtHoraReserva }}</td>
+          <td>{{ reserva.idReserva }}</td>
+          <td>{{ reserva.nomeMotorista }}</td>
+          <td>{{ reserva.solicitanteReserva }}</td>
+          <td>{{ reserva.rota }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <h3>Diários de Bordo</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Data/Hora de Início</th>
+          <th>Data/Hora de Término</th>
+          <th>Local de Partida</th>
+          <th>Local de Destino</th>
+          <th>Qtde. de Paradas</th>
+          <th>Quilometragem Percorrida</th>
+          <th>Observações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let diario of relatorio.diarios">
+          <td>{{ diario.dtHoraInicio }}</td>
+          <td>{{ diario.dtHoraTermino }}</td>
+          <td>{{ diario.localPartida }}</td>
+          <td>{{ diario.localDestino }}</td>
+          <td>{{ diario.qtdeParadas }}</td>
+          <td>{{ diario.quilometragemPercorrida }}</td>
+          <td>{{ diario.observacoes }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</mat-card>

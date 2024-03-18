@@ -1,0 +1,17 @@
+@import '../../../../styles.scss';
+
+.card {
+    display: flex;
+}
+
+form{
+    @include default-position-form;
+}
+
+.buttons {
+    @include default-buttons-form;
+}
+
+.title {
+    @include default-position-mat-title;
+}

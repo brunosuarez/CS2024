@@ -1,0 +1,21 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@mixin default-buttons-form {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+@mixin default-position-mat-title {
+    margin: auto;
+}
+
+@mixin default-position-form {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #D3D3D3;
+}
+
+.card {
+    width: 40%;
+}
+
+.title {
+    @include default-position-mat-title;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    @include default-buttons-form;
+}

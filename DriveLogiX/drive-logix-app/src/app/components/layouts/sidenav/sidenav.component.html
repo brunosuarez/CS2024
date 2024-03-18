@@ -1,0 +1,67 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a routerLink="/home">
+                <i class="material-icons">
+                    home
+                </i>
+                Início
+            </a>
+            <mat-expansion-panel class="expansion-panel">
+                <mat-expansion-panel-header class="panel-header">
+                    <a>
+                        <i class="material-icons">
+                            app_registration
+                        </i>
+                        Cadastro
+                    </a>
+                </mat-expansion-panel-header>
+                <mat-nav-list class="nav-list">
+                    <a routerLink="/motorista/cadastro">Cadastro de Motorista</a>
+                    <a routerLink="/veiculo/cadastro">Cadastro de Veículo</a>
+                </mat-nav-list>
+            </mat-expansion-panel>
+            <a routerLink="/reserva/listagem">
+                <i class="material-icons">
+                    alt_route
+                </i>
+                Reservas
+            </a>
+            <a routerLink="veiculo/listagem">
+                <i class="material-icons">
+                    local_shipping
+                </i>
+                Veículos
+            </a>
+            <a routerLink="motorista/listagem">
+                <i class="material-icons">
+                    personal_injury
+                </i>
+                Motoristas
+            </a>
+            <a routerLink="diario/listagem">
+                <i class="material-icons">
+                    assignment
+                </i>
+                Diários de Bordo
+            </a>
+            <a routerLink="garagem">
+                <i class="material-icons">
+                    store
+                </i>
+                Garagem
+            </a>
+            <a routerLink="relatorio">
+                <i class="material-icons">
+                    summarize
+                </i>
+                Relatórios
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

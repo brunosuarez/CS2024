@@ -1,0 +1,60 @@
+<div class="container">
+  <h2>Diários de Bordo</h2>
+
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar">
+  </mat-form-field><br>
+
+  <button mat-raised-button color="primary" routerLink="/diario/cadastro">Novo Diário</button><br><br>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="dtHoraInicio">
+      <th mat-header-cell *matHeaderCellDef>Data/Hora Início</th>
+      <td mat-cell *matCellDef="let element">{{ element.dtHoraInicio | date: 'dd/MM/yyyy HH:mm' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dtHoraTermino">
+      <th mat-header-cell *matHeaderCellDef>Data/Hora Término</th>
+      <td mat-cell *matCellDef="let element">{{ element.dtHoraTermino | date: 'dd/MM/yyyy HH:mm' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="localPartida">
+      <th mat-header-cell *matHeaderCellDef>Local Partida</th>
+      <td mat-cell *matCellDef="let element">{{ element.localPartida }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="localDestino">
+      <th mat-header-cell *matHeaderCellDef>Local Destino</th>
+      <td mat-cell *matCellDef="let element">{{ element.localDestino }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="qtdeParadas">
+      <th mat-header-cell *matHeaderCellDef>Qtde. Paradas</th>
+      <td mat-cell *matCellDef="let element">{{ element.qtdeParadas }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quilometragemPercorrida">
+      <th mat-header-cell *matHeaderCellDef>Quilometragem Percorrida</th>
+      <td mat-cell *matCellDef="let element">{{ element.quilometragemPercorrida }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="observacoes">
+      <th mat-header-cell *matHeaderCellDef>Observações</th>
+      <td mat-cell *matCellDef="let element">{{ element.observacoes }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="idVeiculo">
+      <th mat-header-cell *matHeaderCellDef>ID Veículo</th>
+      <td mat-cell *matCellDef="let element">{{ element.idVeiculo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="idMotorista">
+      <th mat-header-cell *matHeaderCellDef>ID Motorista</th>
+      <td mat-cell *matCellDef="let element">{{ element.idMotorista }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Veículos</h2>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="placaVeiculo">
+      <th mat-header-cell *matHeaderCellDef>Placa</th>
+      <td mat-cell *matCellDef="let element">{{ element.placaVeiculo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="marcaVeiculo">
+      <th mat-header-cell *matHeaderCellDef>Marca do Veículo</th>
+      <td mat-cell *matCellDef="let element">{{ element.marcaVeiculo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="modeloVeiculo">
+      <th mat-header-cell *matHeaderCellDef>Modelo do Veículo</th>
+      <td mat-cell *matCellDef="let element">{{ element.modeloVeiculo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="anoVeiculo">
+      <th mat-header-cell *matHeaderCellDef>Ano do Veículo</th>
+      <td mat-cell *matCellDef="let element">{{ element.anoVeiculo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quilometragemVeiculo">
+      <th mat-header-cell *matHeaderCellDef>Quilometragem do Veículo</th>
+      <td mat-cell *matCellDef="let element">{{ element.quilometragemVeiculo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="statusVeiculo">
+      <th mat-header-cell *matHeaderCellDef>Status do Veículo</th>
+      <td mat-cell *matCellDef="let element">{{ element.statusVeiculo }}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="editVeiculo(element.idVeiculo)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button (click)="deleteVeiculo(element.idVeiculo)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

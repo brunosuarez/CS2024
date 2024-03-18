@@ -1,0 +1,17 @@
+@import '../.../../../../../styles.scss';
+
+.card {
+    display: flex;
+}
+
+form{
+    @include default-position-form;
+}
+
+button{
+    padding: 10px;
+}
+
+.buttons {
+    @include default-buttons-form;
+}

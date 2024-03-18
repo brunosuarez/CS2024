@@ -1,0 +1,33 @@
+<mat-card class="card">
+    <mat-card-title class="title">Editar Veiculo</mat-card-title>
+    <form #editForm="ngForm">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Data e Hora da Reserva" type="datetime-local" id="dtHoraReserva"
+                name="dtHoraReserva" [(ngModel)]="reserva.dtHoraReserva" (change)="parseDateTime()">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="ID do Motorista" type="number" id="idMotorista" name="idMotorista"
+                [(ngModel)]="reserva.idMotorista">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Nome do Motorista" type="text" id="nomeMotorista" name="nomeMotorista"
+                [(ngModel)]="reserva.nomeMotorista">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="ID do Veículo" type="number" id="idVeiculo" name="idVeiculo"
+                [(ngModel)]="reserva.idVeiculo">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Solicitante da Reserva" type="text" id="solicitanteReserva"
+                name="solicitanteReserva" [(ngModel)]="reserva.solicitanteReserva">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Rota" type="text" id="rota" name="rota" [(ngModel)]="reserva.rota">
+        </mat-form-field>
+    </form>
+
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="updateReserva()">Atualizar</button>
+        <button mat-raised-button color="primary" (click)="cancelEdit()">Cancelar</button>
+    </div>
+</mat-card>

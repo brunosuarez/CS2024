@@ -1,0 +1,41 @@
+<mat-card class="card">
+    <mat-card-title class="title">Crie sua Conta</mat-card-title>
+    <form>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Nome Completo" type="text" id="userName" name="userName" [(ngModel)]="novoUsuario.nome">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="E-mail" type="email" id="userEmail" name="userEmail" [(ngModel)]="novoUsuario.email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="CPF" type="number" id="userCpf" name="userCpf" [(ngModel)]="novoUsuario.cpf">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Setor</mat-label>
+            <mat-select [(ngModel)]="novoUsuario.setor" name="userSetor">
+                <mat-option value="Saúde">Saúde</mat-option>
+                <mat-option value="Educação">Educação</mat-option>
+                <mat-option value="Meio Ambiente">Meio Ambiente</mat-option>
+                <mat-option value="Agricultura">Agricultura</mat-option>
+                <mat-option value="Cultura e Esporte">Cultura e Esporte</mat-option>
+                <mat-option value="Turismo">Turismo</mat-option>
+                <mat-option value="Comunicação">Comunicação</mat-option>
+                <mat-option value="Segurança">Segurança</mat-option>
+                <mat-option value="Obras">Obras</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Gerente" type="text" id="userGerente" name="userGerente" [disabled]="inputDisabled" [(ngModel)]="novoUsuario.gerente">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Senha" type="password" id="userSenha" name="userSenha" [(ngModel)]="novoUsuario.senha">
+        </mat-form-field>
+        <section>
+            <mat-checkbox class="box" (change)="disabledInputGerente()">Sou Gerente</mat-checkbox>
+        </section>
+    </form>
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="salvarConta()">Salvar</button>
+        <button mat-raised-button color="primary" routerLink="/home">Cancelar</button>
+    </div>
+</mat-card>

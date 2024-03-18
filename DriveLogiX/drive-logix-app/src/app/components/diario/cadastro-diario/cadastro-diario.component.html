@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Cadastrar Diários de Bordo</h2>
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Data/Hora Início" type="datetime-local" id="dtHoraInicio" name="dtHoraInicio" [(ngModel)]="diario.dtHoraInicio">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Data/Hora Término" type="datetime-local" id="dtHoraTermino" name="dtHoraTermino" [(ngModel)]="diario.dtHoraTermino">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Local Partida" type="text" id="localPartida" name="localPartida" [(ngModel)]="diario.localPartida" appValidarNome>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Local Destino" type="text" id="localDestino" name="localDestino" [(ngModel)]="diario.localDestino" appValidarNome>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Qtde. Paradas" type="number" id="qtdeParadas" name="qtdeParadas" [(ngModel)]="diario.qtdeParadas">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Quilometragem Percorrida" type="number" id="quilometragemPercorrida" name="quilometragemPercorrida" [(ngModel)]="diario.quilometragemPercorrida">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Observações" type="text" id="observacoes" name="observacoes" [(ngModel)]="diario.observacoes">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="ID Veículo" type="number" id="idVeiculo" name="idVeiculo" [(ngModel)]="diario.idVeiculo">
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="ID Motorista" type="number" id="idMotorista" name="idMotorista" [(ngModel)]="diario.idMotorista">
+      </mat-form-field>
+  
+      <div class="buttons">
+        <button mat-raised-button color="primary" (click)="cadastrarDiario()">Cadastrar</button>
+        <button mat-raised-button color="primary" routerLink="/diario/listagem">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  

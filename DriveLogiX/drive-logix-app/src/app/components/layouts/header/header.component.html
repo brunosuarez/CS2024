@@ -1,0 +1,28 @@
+<div class="main-content">
+    <mat-toolbar class="header">
+        <div class="logo">
+            <a routerLink="/">
+                <img class="logo-img" src="../../../../assets/images/logo.png" alt="logo">
+            </a>
+        </div>
+
+        <div class="options-header">
+            <ng-container *ngIf="!usuarioLogado">
+                <a routerLink="/create-conta">
+                    Criar Conta
+                </a>&nbsp;&nbsp;
+                <a routerLink="/login">
+                    Login
+                </a>&nbsp;&nbsp;
+            </ng-container>
+            <ng-container *ngIf="usuarioLogado">
+                <span>{{ emailUsuario }}</span>&nbsp;&nbsp;
+                <a routerLink="" matTooltip="Sair da conta" (click)="sairConta()">
+                    <i class="material-icons">
+                        logout
+                    </i>
+                </a>
+            </ng-container>
+        </div>
+    </mat-toolbar>
+</div>
